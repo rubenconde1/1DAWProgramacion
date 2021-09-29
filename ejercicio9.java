@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio8 {
+public class ejercicio9 {
     public static void main(String[] args) {
         int age;
 
@@ -12,9 +12,9 @@ public class ejercicio8 {
         
         if (age>=18){
             System.out.println("Eres mayor de edad");
+        } else {
+            System.out.println("Eres menor de edad");
         }
-
         inputValue.close();
     }
-
 }
