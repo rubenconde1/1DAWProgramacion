@@ -1,4 +1,4 @@
-public class Ejemplo1 {
+public class ejemplo1 {
 	public static void main (String [] args) {
 		double dividendo = 20.0;
 		double divisor = 6.0;
