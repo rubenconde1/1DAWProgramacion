@@ -1,17 +1,8 @@
-import java.util.Scanner;
-
 public class Ejemplo3 {
-	public static void main (String [] argv) {
-	float side;
-	float SquareArea;
+	public static void main (String [] args) {
+		int squareArea =5*5;
+		
 
-	System.out.println("Ingresa un valor");
-
-	Scanner inputValue;
-	inputValue=new Scanner(System.in);
-	side = inputValue.nextFloat();
-
-	SquareArea = side * side;
-	System.out.println(SquareArea);
+		System.out.println(squareArea);
 	}
 }
