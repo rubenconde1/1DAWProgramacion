@@ -15,7 +15,7 @@ public class ejercicio7 {
         System.out.println("Introduce el precio real");
         precioReal = inputValue.nextFloat();
 
-        descuento = (precioRebajado - precioReal) / precioRebajado * 100;
+        descuento = (precioReal - precioRebajado) / precioReal * 100;
         System.out.println("El descuento es:" + descuento + "%");
     }
 }
