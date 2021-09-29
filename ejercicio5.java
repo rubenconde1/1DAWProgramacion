@@ -25,6 +25,6 @@ class ejercico5 {
 
         division = a / b;
         System.out.println(division);
-
+        inputValue.close();
     }
 }

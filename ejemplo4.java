@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Ejemplo3 {
+class Ejemplo4 {
 	public static void main(String [] args) {
 		float side;
 		float squareArea;
@@ -12,5 +12,6 @@ class Ejemplo3 {
 
 	squareArea = side * side;
 	System.out.println(squareArea);
+	inputValue.close();
 	}
 }
