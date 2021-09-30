@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ejercicio13 {
     public static void main(String[] args) {
         int x, y;
-        boolean orden;
+        float orden;
 
         System.out.println("Escribe un número: ");
 
@@ -15,24 +15,15 @@ public class ejercicio13 {
         y = inputValue.nextInt();
 
         System.out.println("ascendente o descendente");
-        orden = inputValue.nextBoolean();
+        orden = inputValue.nextFloat();
 
-        if (orden = "ascendente") {
+        if (orden = ascendente) {
             if (x < y) {
                 System.out.println(x + ", " + y);
             } else {
                 System.out.println(y + ", " + x);
-            }
-            }
-        } else {
-        
-        if (orden = "descendente") {
-                if (x < y) {
-                    System.out.println(y + ", " + x);
-                } else {
-                    System.out.println(x + ", " + y);
                 }
             }
-        }
+            }
+        
     }
-}

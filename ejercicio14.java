@@ -32,5 +32,6 @@ public class ejercicio14 {
             }
         }
             
+        inputValue.close();
     }
 }
