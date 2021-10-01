@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ejercicio16 {
     public static void main(String[] args) {
         int x, y;
-        String op;
+        int op;
 
         System.out.println("Introduce dos valores");
         System.out.println("Introduce el primer valor: ");
@@ -15,21 +15,19 @@ public class ejercicio16 {
         System.out.println("Introduce el segundo valor: ");
         y = inputValue.nextInt();
         
-        System.out.println("Escribe que operación quieres hacer: suma, resta, multiplicacion, division ");
-        /*Scanner miScanner = new Scanner (System.in);
-        op = miScanner.next();
-        orden = inputValue.next(); */
-        op = inputValue.next();
+        System.out.println("Escribe el número de la operación correspondiente: (1)suma, (2)resta, (3)multiplicacion, (4)division ");
+ 
+        op = inputValue.nextInt();
  
       
         switch (op) {
-            case sumar: System.out.print("La suma es: " + (x + y));
+            case 1: System.out.print("La suma es: " + (x + y));
                 break;
-            case restar: System.out.println("La resta es: " + (x - y));
+            case 2: System.out.println("La resta es: " + (x - y));
                 break;
-            case multiplicacion: System.out.println("La multiplicación es: " + (x * y));
+            case 3: System.out.println("La multiplicación es: " + (x * y));
                 break;
-            case division: System.out.println("La división es: " + (x / y)); 
+            case 4: System.out.println("La división es: " + (x / y)); 
                 break;
             default: System.out.println("error");
                 inputValue.close();
