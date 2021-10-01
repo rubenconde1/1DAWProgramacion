@@ -5,13 +5,17 @@ public class ejercicio18 {
         int horas, minutos, segundos, tiempoAñadido;
 
         System.out.println("Introduzca el número de horas: ");
-        System.out.println("Introduzca el número de minutos: ");
-        System.out.println("Introduzca el número de segundos: ");
+        
+        
 
         Scanner inputValue;
         inputValue = new Scanner (System.in);
         horas = inputValue.nextInt();
+
+        System.out.println("Introduzca el número de minutos: ");
         minutos = inputValue.nextInt();
+
+        System.out.println("Introduzca el número de segundos: ");
         segundos = inputValue.nextInt();
         inputValue.close();
 
@@ -28,10 +32,6 @@ public class ejercicio18 {
         if (minutos >= 60) {
             minutos = 0;
             horas = horas + 1;
-        } else {
-            if (minutos < 60) {
-                minutos = minutos + 1;
-            }
         }
         System.out.println("La hora es: " + horas + ":" + minutos + ":" + segundos);
     }
