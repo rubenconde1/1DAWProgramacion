@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ejercicio13 {
     public static void main(String[] args) {
         int x, y;
-        float orden;
+        int orden;
 
         System.out.println("Escribe un número: ");
 
@@ -14,16 +14,26 @@ public class ejercicio13 {
         System.out.println("Escribe un segundo número: ");
         y = inputValue.nextInt();
 
-        System.out.println("ascendente o descendente");
-        orden = inputValue.nextFloat();
+        System.out.println("Escriba 1 si quiere ascendente, escriba 2 si quiere descendente");
+        orden = inputValue.nextInt();
+        inputValue.close();
 
-        if (orden = ascendente) {
-            if (x < y) {
-                System.out.println(x + ", " + y);
-            } else {
-                System.out.println(y + ", " + x);
+        switch (orden) {
+            case 1:
+                if (x < y) {
+                    System.out.println("Los números ordenados de manera ascendente son: " + x + ", " + y);
+                } else {
+                    System.out.println("Los números ordenados de manera ascendente son: " + y + ", " + x);
                 }
-            }
-            }
-        
+                break;
+            case 2:
+                if (x < y) {
+                    System.out.println("Los números ordenados de manera descendente son: " + y + ", " + x);
+                } else {
+                    System.out.println("Los números ordenados de manera ascendente son: " + x + ", " + y);
+                }
+                break;
+                default: System.out.println("ERROR");
+        }
     }
+}
