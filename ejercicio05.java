@@ -1,18 +1,14 @@
 import java.util.Scanner;
 class ejercico5 {
    public static void main(String[] args) {
-        float a;
-        float b;
-        float suma;
-        float resta;
-        float multiplicacion;
-        float division;
+        int a, b;
+        int suma, resta, multiplicacion, division;
 
         System.out.println("Ingresa dos valores");
         Scanner inputValue;
         inputValue = new Scanner (System.in);
-        a = inputValue.nextFloat();
-        b = inputValue.nextFloat();
+        b = inputValue.nextInt();
+        a = inputValue.nextInt();
 
         suma = a + b;
         System.out.println(suma);
