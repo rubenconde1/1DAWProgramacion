@@ -2,13 +2,14 @@ import java.util.Scanner;
 
 public class ejercicio08 {
     public static void main(String[] args) {
-        int age;
+        //Define variables
+        short age;
 
+        //Begin the program
         System.out.print("Introduce tu edad: ");
         
-        Scanner inputValue;
-        inputValue = new Scanner (System.in);
-        age = inputValue.nextInt();
+        Scanner inputValue = new Scanner (System.in);
+        age = inputValue.nextShort();
         
         if (age>=18){
             System.out.println("Eres mayor de edad");
