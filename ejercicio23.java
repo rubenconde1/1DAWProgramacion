@@ -17,9 +17,11 @@ public class ejercicio23 {
             positive = positive + 1;
         }
         i = i + 1;
-        
+
         System.out.println(positive + " positives");
        
         } while (num != 0);
+    
+        inputValue.close();
     }
 }
