@@ -2,8 +2,11 @@ import java.util.Scanner;
 
 public class ejercicio15 {
     public static void main (String argv[]) {
+        //Declaración de variables
         int grade;
         Scanner inputValue;
+
+        //Inicio del programa
         System.out.println("Introduce un número del 1 al 10: ");
 
         inputValue = new Scanner(System.in);
@@ -35,3 +38,4 @@ public class ejercicio15 {
         inputValue.close();
     }
 }
+//Corregido
