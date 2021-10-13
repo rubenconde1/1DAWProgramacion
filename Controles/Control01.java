@@ -11,8 +11,6 @@ public class Control01 {
         System.out.println("Dime el número de lados del polígono");
         n = inputValue.nextInt();
         
-    
-
         if ((n == 3) || (n == 4)) {
             System.out.println("Dime la longitud del lado del polígono:");
             longitud = inputValue.nextDouble();
@@ -24,7 +22,6 @@ public class Control01 {
                 System.out.println("El perímetro del cuadrado es: " + n * longitud);
             }
         } else {
-            System.out.println("Valor inválido");
         }
     }
 }
