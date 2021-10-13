@@ -1,3 +1,4 @@
+package Tema1;
 import java.util.Scanner;
 
 public class ejercicio19 {
@@ -8,10 +9,10 @@ public class ejercicio19 {
 
         Scanner inputValue;
         inputValue = new Scanner (System.in);
-        horas = inputValue.nextInt();
+        horas = inputValue.nextDouble();
 
         System.out.println("Introduce el precio: ");
-        precio = inputValue.nextInt();
+        precio = inputValue.nextDouble();
 
         inputValue.close();
 

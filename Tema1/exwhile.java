@@ -1,3 +1,5 @@
+package Tema1;
+
 public class exwhile {
     public static void main(String[] args) {
         int i;

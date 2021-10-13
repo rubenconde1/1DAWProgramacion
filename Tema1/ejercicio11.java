@@ -1,22 +1,24 @@
+package Tema1;
 import java.util.Scanner;
 
-public class ejercicio12 {
+public class ejercicio11 {
     public static void main(String[] args) {
-        int x, y;
+        int x;
+        int y;
 
-        System.out.println("Escribe un número: ");
-
+        System.out.println("Ingresa un número: ");
+        
         Scanner inputValue;
         inputValue = new Scanner (System.in);
         x = inputValue.nextInt();
 
-        System.out.println("Escribe otro número ");
+        System.out.println("Ingresa otro número: ");
         y = inputValue.nextInt();
 
         if (x < y) {
-            System.out.println("El número mayor es: " + y);
+            System.out.println(x + ", " + y);
         } else {
-            System.out.println("El número mayor es: " + x);
+            System.out.println(y + ", " + x);
         }
         inputValue.close();
     }

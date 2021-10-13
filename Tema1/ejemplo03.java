@@ -1,3 +1,4 @@
+package Tema1;
 public class ejemplo03 {
 	public static void main (String [] args) {
 		int squareArea =5*5;

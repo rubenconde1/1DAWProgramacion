@@ -1,4 +1,4 @@
-
+package Tema1;
 import java.util.Scanner;
 public class ejercicio22 {
     public static void main (String argv[]) {

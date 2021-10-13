@@ -1,3 +1,5 @@
+package Tema1;
+
 public class ejemplo02 {
 	public static void main (String [] args) {
 		int dividendo = 20;
