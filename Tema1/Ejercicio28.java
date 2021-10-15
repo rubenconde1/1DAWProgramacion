@@ -3,23 +3,27 @@ import java.util.Scanner;
 
 public class Ejercicio28 {
     public static void main(String[] args) {
-        int n, i = 0;
-        boolean primo = false;
+        int numero, i = 0;
+        boolean primo = true;
         Scanner inputValue = new Scanner (System.in);
 
         System.out.println("Introduce un valor:");
-        n = inputValue.nextInt();
+        numero = inputValue.nextInt();
         inputValue.close();
 
-        for (n = i; i > 0; i++) {
-            if (i % n == 0) {
-                primo = false;
+        for (i = 2; i <= numero; i++) {
+            primo = true;
+            for(int j = 3; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    primo = false;
             }
         }
-        if (primo) {
-            System.out.println("El número es primo");
+        if (primo == true) {
+        System.out.println("El número es primo.");
         } else {
-            System.out.println("El número no es primo");
-        }
-    }
+        System.out.println("El número no es primo.");
+    
+          }
+     }
+}
 }
