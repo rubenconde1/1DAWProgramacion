@@ -1,17 +1,20 @@
 package Tema1;
 
-import java.util.Scanner;
-
 public class Ejercicio29 {
     public static void main(String[] args) {
-    int numero;
-    Scanner inputValue = new Scanner (System.in);
+    int i = 0, j = 0;
+    boolean primo;
 
-        System.out.println("Introduce un valor:");
-        numero = inputValue.nextInt();
-        inputValue.close();
-
-    
-
+    for (i = 3; i <= 100; i++) {
+        primo = true;
+        for (j = 2; j < i; j++) {
+            if (i % j == 0) {
+                primo = false;
+            }
+        }
+        if (primo) {
+            System.out.println(i);
+        }
+        }
     }
 }

@@ -11,11 +11,9 @@ public class Ejercicio28 {
         numero = inputValue.nextInt();
         inputValue.close();
 
-        for (i = 2; i <= numero; i++) {
-            primo = true;
-            for(int j = 3; j <= Math.sqrt(i); j++) {
-                if (i % j == 0) {
-                    primo = false;
+        for (i = 2; i < numero; i++) {
+            if ((numero % 1 == 0) && (numero % numero == 0) && (numero % i == 0)) {
+                primo = false;
             }
         }
         if (primo == true) {
@@ -25,5 +23,4 @@ public class Ejercicio28 {
     
           }
      }
-}
 }
