@@ -23,8 +23,8 @@ public class ejercicio19 {
         }
         System.out.println("Salario bruto: " + bruto);
 
-        if (bruto > 500) {
-            if (bruto > 900) {
+        if (bruto >= 500) {
+            if (bruto >= 900) {
                 tasas = 400 * 0.25 + (bruto - 900) * 0.45;
             } else {
                 tasas = (bruto - 500) * 0.25;
