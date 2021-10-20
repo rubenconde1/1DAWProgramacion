@@ -12,10 +12,12 @@ public class ejercicio21 {
         año = inputValue.nextInt();
         inputValue.close();
 
-        if ((año % 4 ==0) && ((año % 100 != 0) || (año % 400 == 0))) {
+        if ((año % 4 == 0) && ((año % 100 != 0) || (año % 400 == 0))) {
             System.out.println("Es año bisiesto: " + año);
         } else {
             System.out.println("No es año bisiesto: " + año);
         }
     }
 }
+
+//Corregido

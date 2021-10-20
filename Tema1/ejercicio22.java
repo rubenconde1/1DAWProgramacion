@@ -21,3 +21,5 @@ public class ejercicio22 {
         inputValue.close();
     }
 }
+
+//Corregido
