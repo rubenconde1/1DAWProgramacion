@@ -12,6 +12,7 @@ public class Ejercicio36 {
         for (i = 0; i < numeros.length; i++) {
             System.out.println("Ingrese número " + j++ + ":");
             numeros [i] = inputValue.nextDouble();
+            inputValue.close();
         }
         max = numeros[0];
         
