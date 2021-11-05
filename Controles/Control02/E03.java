@@ -11,7 +11,8 @@ public class E03 {
         nota2 = inputValue.nextDouble();
         nota3 = inputValue.nextDouble();
         nota4 = inputValue.nextDouble();
-
+        inputValue.close();
+        
         promedio = (nota1 + nota2 + nota3 + nota4) / 4;
 
         System.out.println("El promedio es: " + promedio);
