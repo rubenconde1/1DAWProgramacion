@@ -17,6 +17,5 @@ public class Ejercicio39 {
               System.out.println(i);
           }   
         }
-       // System.out.println("El número es divisible por: " + i + " divisores");
     }
 }

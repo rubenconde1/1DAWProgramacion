@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E09",
+            "request": "launch",
+            "mainClass": "Controles.Control02.E09",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

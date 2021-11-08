@@ -23,7 +23,7 @@ public class E09 {
 
         //Despejo certamen 3
         //Nc * 3 = (c1 + c2 + c3) -> 3Nc = - C1 - C2 - C3 ->
-        certamen3 = (-certamen1 - certamen2) + (Nc * 3);
+        certamen3 = (Nc * 3) + (certamen1 + certamen2);
 
         System.out.println("Necesita nota " + certamen3 + "en el certamen 3");
     }
