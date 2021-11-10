@@ -5,6 +5,7 @@ public class Ejercicio43 {
     public static void main(String[] args) {
        Scanner inputValue = new Scanner(System.in);
        double dividend, divisor;
+       int contador = 0;
        
        System.out.println("Enter dividend:");
        dividend = inputValue.nextDouble();
@@ -14,7 +15,10 @@ public class Ejercicio43 {
 
        while (dividend >= divisor) {
            dividend = dividend - divisor;
+           contador++;
        }
        System.out.println(dividend);
+       System.out.println("El número de restas ha sido: " + contador);
+       
     }
 }
