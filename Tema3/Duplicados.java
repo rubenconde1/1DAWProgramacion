@@ -26,7 +26,7 @@ public class Duplicados {
                     }
                 }
             }
-            if(lista[i] != 0) {
+            if(count > 1) {
                 System.out.println(lista[i] + " se repite: " + count);
             }
         }
