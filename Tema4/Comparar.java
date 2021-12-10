@@ -11,13 +11,14 @@ public class Comparar {
             if (longitudCadena1 > longitudCadena2) {
                 System.out.println("Cadena 1 es mayor");
             
-            } if (longitudCadena1 < longitudCadena2) {
+            } 
+            if (longitudCadena1 < longitudCadena2) {
                 System.out.println("Cadena 2 es mayor");
             
             }
-            if (longitudCadena1 == longitudCadena2) {
-                
+            if (longitudCadena1 == longitudCadena2) {  
             System.out.println("Son iguales");
+            
             }
         } 
     }
