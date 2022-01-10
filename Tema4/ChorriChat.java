@@ -15,6 +15,7 @@ public class ChorriChat {
             System.out.println(esSaludo(usuario));
         }
         while (!(usuario.contains("hola") || usuario.contains("buenos dias") || usuario.contains("buenas")));
+        teclado.close();
     }
         
     public static String esSaludo(String saludoUsuario) {
