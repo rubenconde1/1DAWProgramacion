@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SillaTest",
+            "request": "launch",
+            "mainClass": "Tema5.SillaTest",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch E09",
             "request": "launch",
             "mainClass": "Controles.Control02.E09",
