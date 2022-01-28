@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HeaterTest",
+            "request": "launch",
+            "mainClass": "Tema5.HeaterTest",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch BookTest",
+            "request": "launch",
+            "mainClass": "Tema5.BookTest",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch TicketMachineTest",
             "request": "launch",
             "mainClass": "Tema5.TicketMachineTest",
