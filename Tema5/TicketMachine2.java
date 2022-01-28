@@ -19,8 +19,10 @@ public class TicketMachine2 {
     // The total amount of money collected by this machine.
     private int total;
 
-    public void emptyMachine() {
-        total = 0;
+    public int emptyMachine() {
+        int acum = total;
+        this.total = 0;
+        return acum;
     }
 
     /**
@@ -69,9 +71,10 @@ public class TicketMachine2 {
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
-    public void printTicket()
-    {
-        if(balance >= price) {
+    public void printTicket() {
+        int amountToPay = actualPrice - balance;
+
+        if (amountToPay <= 0) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -81,15 +84,19 @@ public class TicketMachine2 {
             System.out.println();
 
             // Update the total collected with the price.
-            total = total + price;
+            total = total + actualPrice;
             // Reduce the balance by the price.
-            balance = balance - price;
+            balance = balance - actualPrice;
         }
         else {
             System.out.println("You must insert at least: " +
-                               (price - balance) + " more cents.");
+                               (amountToPay) + " more cents.");
                     
         }
+    }
+
+    public void setDiscount() {
+        this.discount = 20;
     }
 
     /**
