@@ -54,7 +54,14 @@ public class MailClient
      */
     public void sendMailItem(String to, String asunto, String message)
     {
-        MailItem item = new MailItem(user, to, asunto, message);
-        server.post(item);
+        for (String destinatarios : to.split(";")) {
+            
+            MailItem item = new MailItem(user, destinatarios, asunto, message);
+            server.post(item);
+            
+        }
+    }
+    public void forwardLastMailItem (String forwardTo) {
+        
     }
 }
