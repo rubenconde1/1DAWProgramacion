@@ -13,7 +13,7 @@ public class MailTest {
         user1.sendMailItem("A", "asunto", "mensaje");
         System.out.println(server1.howManyMailItems("A"));
         user1.sendMailItem("A;B;C", "asunto", "mensaje");
-        forwardLastMailItem("");
+        user1.forwardLastMailItem("B");
 
     }
 }

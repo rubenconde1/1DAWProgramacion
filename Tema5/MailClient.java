@@ -63,5 +63,13 @@ public class MailClient
     }
     public void forwardLastMailItem (String forwardTo) {
         
+        MailItem item = server.getNextMailItem(user);
+        if (item == null) {
+            System.out.println("No hay email para reenviar");
+        } else {
+            item.print();
+            MailItem nuevo = new MailItem(item.getFrom(), forwardTo, item.getAsunto(), item.getMessage());
+            server.post(nuevo);
+        }
     }
 }
