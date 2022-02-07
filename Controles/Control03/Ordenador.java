@@ -5,6 +5,7 @@ public class Ordenador {
     private String formato;
     private String color;
     private Teclado teclado;
+    private Ordenador pcConectado = null;
 
 
     //getters//
@@ -16,6 +17,14 @@ public class Ordenador {
         return color;
     }
 
+    public Teclado getTeclado() {
+        return teclado;
+    }
+
+    public Ordenador getPcConectado() {
+        return pcConectado;
+    }
+
     //setters//
     
 
@@ -23,11 +32,18 @@ public class Ordenador {
     public Ordenador() {
         formato = "No asignado";
         color = "No asignado";
+        this.teclado = new Teclado();
     }
 
-    public Ordenador(String formato, String color) {
+    public Ordenador(String formato, String color, Teclado teclado) {
         this.color = color;
         this.formato = formato;
-        teclado.imprimirTeclado();
+        this.teclado = teclado;
+    }
+
+    public void conectar (Ordenador pcConectado) {
+        if (pcConectado != null) {
+            this.pcConectado = pcConectado;
+        }
     }
 }

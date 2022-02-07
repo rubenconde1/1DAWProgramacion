@@ -51,6 +51,7 @@ public class Teclado {
         this.color = color;
         this.numeroTeclas = numeroTeclas;
         this.conectividad = conectividad;
+        this.idioma = setParametroIdioma(idioma);
         this.formato = formato;
 
         nuevoTeclado();
@@ -75,10 +76,10 @@ public class Teclado {
 
     //setters//
 
-    public void setParametroIdioma(String language) {
-        if (idioma.length() <= 2) {
-            idioma = language;
-        } else {System.out.println("El idioma supera los tres carácteres de entrada.");}
+    private String setParametroIdioma(String language) {
+        if (language.length() == 2) {
+            return language;
+        } else {return "El idioma supera los dos carácteres de entrada.";}
     }
 
 }
