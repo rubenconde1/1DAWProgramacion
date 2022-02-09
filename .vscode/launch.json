@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch MusicOrganizerTest",
             "request": "launch",
+            "mainClass": "Tema5.MusicOrganizerV2.MusicOrganizerTest",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch MusicOrganizerTest",
+            "request": "launch",
             "mainClass": "Tema5.MusicOrganizerTest",
             "projectName": "1DAWProgramacion_85b2f988"
         },
