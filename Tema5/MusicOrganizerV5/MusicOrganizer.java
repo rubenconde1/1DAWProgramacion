@@ -109,8 +109,11 @@ public class MusicOrganizer
     }
 
     public void findInTittle(String searchString) {
-        for (Track busqueda : tracks.contains(searchString)) {
-            System.out.println(busqueda);
+        ArrayList<String> busqueda = new ArrayList<>();
+        for (Track listado : tracks) {
+            if (listado.contains(searchString)) {
+                busqueda.add(listado);
+            }
         }
     }
     
