@@ -8,5 +8,6 @@ public class MusicOrganizerTest {
         player1.addFile("song3");
         player1.listAllFiles();
         player1.listMaching("ng");
+        player1.findFirst("2");
     }
 }

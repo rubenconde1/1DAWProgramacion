@@ -56,20 +56,45 @@ public class MusicOrganizer
     }
 
     public void listAllFiles() {
-        for (String filename : files) {
-            System.out.println(filename);
+        for (String cancion : files) {
+            System.out.println(cancion);
         }
     }
 
     public void listMaching(String match) {
-        //usar fori?
+        for (String cancion : getMatching(match)) {
+            System.out.println(cancion);
+        }
+
+        if (getMatching(match).size() == 0) {
+            System.out.println("No hay coincidencias.");
+        }
+    }
+
+    public ArrayList<String> getMatching (String match) {
+        ArrayList<String> resultado = new ArrayList<>();
+
         for (String list : files) {
-            if (list.matches(match)) {
-                addFile(list);
-            } else {
-                System.out.println("No se ha encontrado ninguna canción.");
+            if (list.contains(match)) {
+                resultado.add(list);
             }
         }
+        return resultado;
+    }
+
+    public int findFirst (String searchString) {
+        int indice = 0;
+        int resultado = -1;
+
+        while (indice < files.size()) {
+            if(files.get(indice).contains(searchString)) {
+                resultado = indice;
+                break;
+            } else {
+                indice++;
+            }
+        }
+        return resultado;
     }
     
     /**
@@ -92,6 +117,15 @@ public class MusicOrganizer
     {
         String filename = files.get(index);
         player.startPlaying(filename);
+    }
+
+    public void playMatching(String match) {
+        ArrayList<String> canciones = getMatching(match);
+
+        for (String cancion : canciones) {
+            System.out.println(cancion);
+            player.playSample(cancion);
+        }
     }
 
     /**
