@@ -1,0 +1,1 @@
+* Crea un programa en el que crees un array de 1000 enteros, en las posiciones pares han de aparecer los multiplos de 3, y en las impares los multiplos de 7, despues de rellenarlo hay que imprimir las posiciones del array (contenido) de las posiciones que son multiplos de 13.
