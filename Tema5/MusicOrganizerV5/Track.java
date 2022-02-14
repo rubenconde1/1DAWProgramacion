@@ -15,7 +15,9 @@ public class Track
     private String title;
     // Where the track is stored.
     private String filename;
-    
+    //Contador
+    private int playCount;
+
     /**
      * Constructor for objects of class Track.
      * @param artist The track's artist.
@@ -87,4 +89,11 @@ public class Track
         this.filename = filename;
     }
     
+    public void resetPlayCount() {
+        playCount = 0;
+    }
+
+    public void incPlayCount() {
+        playCount++;
+    }
 }
