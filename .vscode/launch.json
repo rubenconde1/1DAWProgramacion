@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Tema5.cutreCloud.Test",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch MusicOrganizerTest",
             "request": "launch",
             "mainClass": "Tema5.MusicOrganizerV2.MusicOrganizerTest",
