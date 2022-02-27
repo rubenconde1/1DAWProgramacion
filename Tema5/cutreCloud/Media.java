@@ -23,7 +23,6 @@ public class Media {
         this.contenido = contenido;
         this.tipo = tipo;
         this.usuario_id = getUsuario_id();
-        arrayMedia.add(this);
     }
     
 
@@ -81,6 +80,16 @@ public class Media {
         for (Media listado : arrayMedia) {
             if (nombre.equals(listado.getNombre())) {
                 index = listado.getIdMedia();
+            }
+        }
+        arrayMedia.remove(index);
+    }
+
+    public void eliminarTipoConcreto (MediaType tipo) {
+        int index = 0;
+        for (Media listado : arrayMedia) {
+            if (tipo.equals(listado.getTipo())) {
+                index = arrayMedia.indexOf(this);
             }
         }
         arrayMedia.remove(index);

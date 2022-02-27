@@ -18,6 +18,7 @@ public class Usuario {
             arrayUsuarios.add(this);
         } else {
             this.email = "Correo duplicado: " + email;
+            arrayUsuarios.add(this);
         }
         this.password = password;
     }
@@ -55,5 +56,29 @@ public class Usuario {
             }
         }
         return esUnico;
+    }
+
+    public void eliminarUsuarioPorEmail (String email) {
+        int index;
+        for (Usuario listado : arrayUsuarios) {
+            if (email.equals(listado.getEmail())) {
+                index = arrayUsuarios.indexOf(this);
+                arrayUsuarios.remove(index);
+                break;
+            }
+        }
+    }
+
+    public void eliminarUsuariosDominio (String dominio) {
+        String email = "";
+        int index;
+        for (Usuario listado : arrayUsuarios) {
+            email = listado.getEmail();
+            if (email.contains(dominio)) {
+                index = arrayUsuarios.indexOf(this);
+                arrayUsuarios.remove(index);
+                break;
+            }
+        }
     }
 }

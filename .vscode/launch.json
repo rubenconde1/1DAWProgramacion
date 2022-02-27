@@ -9,6 +9,13 @@
             "name": "Launch Test",
             "request": "launch",
             "mainClass": "Tema5.cutreCloud.Test",
+            "projectName": "1DAWProgramacion_45c63a41"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Tema5.cutreCloud.Test",
             "projectName": "1DAWProgramacion_85b2f988"
         },
         {
