@@ -2,7 +2,7 @@ package Tema5.cutreCloud;
 
 import java.util.ArrayList;
 
-public class Usuario {
+public class Usuario implements Interfaz {
     private int id;
     private String email;
     private String password;
@@ -80,5 +80,17 @@ public class Usuario {
                 break;
             }
         }
+    }
+
+    public void parserXML(){
+
+        System.out.println("<usuario>");   
+        for (Usuario listado : arrayUsuarios) {
+            
+            System.out.println("<id>" + listado.getId() + "</id>");
+            System.out.println("<email>" + listado.getEmail() + "</email>");
+            System.out.println("<password>" + listado.getPassword() + "</password");
+        }
+            System.out.println("</usuario>");
     }
 }

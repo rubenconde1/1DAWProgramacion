@@ -2,7 +2,7 @@ package Tema5.cutreCloud;
 
 import java.util.ArrayList;
 
-public class Media {
+public class Media implements Interfaz {
     private int id;
     private static int idGenerator = 1;
     private String nombre;
@@ -93,6 +93,18 @@ public class Media {
             }
         }
         arrayMedia.remove(index);
+    }
+
+    public void parserXML(){
+        System.out.println("<media>");
+        for (Media listado : arrayMedia) {
+            System.out.println("<id>" + listado.getIdMedia() + "</id>");
+            System.err.println("<nombre>" + listado.getNombre() + "</nombre>");
+            System.out.println("<contenido>" + listado.getContenido() + "</contenido>");
+            System.out.println("<tipo>" + listado.getTipo() + "</tipo>");
+            System.out.println("<usuario_id>" + listado.getUsuario_id() + "</usuario_id>");
+        }
+        System.out.println("</media>");
     }
 
     //Asignar un campo Media cada vez que se crea un Usuario. 

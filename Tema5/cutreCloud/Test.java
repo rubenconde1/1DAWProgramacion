@@ -12,6 +12,9 @@ public class Test {
         userMedia1 = new Media("audio.mp3", "aaaa", MediaType.AUDIO, user1);
         userMedia2 = new Media("video.mp4", "bbbb", MediaType.VIDEO, user2);
         userMedia3 = new Media("img.jpg", "cccc", MediaType.IMAGE, user3);
+        
+        user1.parserXML();
+        userMedia1.parserXML();
 
         userMedia1.eliminarPorNombre("aaaa");
         
@@ -23,6 +26,7 @@ public class Test {
         
 
         user3.eliminarUsuariosDominio("@gmail.com");
+
         
     }
 } 
