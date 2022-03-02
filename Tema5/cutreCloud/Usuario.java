@@ -1,8 +1,9 @@
 package Tema5.cutreCloud;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Usuario implements Interfaz {
+public class Usuario implements ParserXML {
     private int id;
     private String email;
     private String password;
@@ -69,28 +70,35 @@ public class Usuario implements Interfaz {
         }
     }
 
-    public void eliminarUsuariosDominio (String dominio) {
-        String email = "";
-        int index;
-        for (Usuario listado : arrayUsuarios) {
-            email = listado.getEmail();
-            if (email.contains(dominio)) {
-                index = arrayUsuarios.indexOf(this);
-                arrayUsuarios.remove(index);
-                break;
+    public static void eliminarUsuariosDominio (String dominio) {
+        Iterator<Usuario> it = arrayUsuarios.iterator();
+
+        while (it.hasNext()) {
+            Usuario user = it.next();
+
+            if (user.email.endsWith(dominio)) {
+                arrayUsuarios.remove(user);
             }
         }
     }
 
-    public void parserXML(){
+    public String generateXML(){
 
-        System.out.println("<usuario>");   
-        for (Usuario listado : arrayUsuarios) {
+        String xml = "<usuario>\n";
+        xml += "<id>" + id + "</id>\n";
+        xml += "<password>" + password + "</password>\n";
+        xml += "<email>" + email + "</email>\n";
+        xml += "</usuario>\n";
+
+        return xml;
+
+        // System.out.println("<usuario>");   
+        // for (Usuario listado : arrayUsuarios) {
             
-            System.out.println("<id>" + listado.getId() + "</id>");
-            System.out.println("<email>" + listado.getEmail() + "</email>");
-            System.out.println("<password>" + listado.getPassword() + "</password");
-        }
-            System.out.println("</usuario>");
+        //     System.out.println("<id>" + listado.getId() + "</id>");
+        //     System.out.println("<email>" + listado.getEmail() + "</email>");
+        //     System.out.println("<password>" + listado.getPassword() + "</password");
+        // }
+        //     System.out.println("</usuario>");
     }
 }

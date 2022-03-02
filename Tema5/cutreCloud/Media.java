@@ -1,14 +1,15 @@
 package Tema5.cutreCloud;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Media implements Interfaz {
+public class Media implements ParserXML {
     private int id;
     private static int idGenerator = 1;
     private String nombre;
     private String contenido;
     private MediaType tipo;
-    private Usuario usuario_id;
+    private Usuario usuario;
     public static ArrayList<Media> arrayMedia = new ArrayList<>();
 
     //Constructor
@@ -22,7 +23,7 @@ public class Media implements Interfaz {
         }
         this.contenido = contenido;
         this.tipo = tipo;
-        this.usuario_id = getUsuario_id();
+        this.usuario = getUsuario_id();
     }
     
 
@@ -56,7 +57,7 @@ public class Media implements Interfaz {
         this.tipo = tipo;
     }
     public Usuario getUsuario_id() {
-        return usuario_id;
+        return usuario;
     }
 
     public static ArrayList<Media> getArrayUsuario_id() {
@@ -75,7 +76,7 @@ public class Media implements Interfaz {
         return esUnico;
     }
 
-    public void eliminarPorNombre (String nombre) {
+    public static void eliminarPorNombre (String nombre) {
         int index = 0;
         for (Media listado : arrayMedia) {
             if (nombre.equals(listado.getNombre())) {
@@ -85,27 +86,52 @@ public class Media implements Interfaz {
         arrayMedia.remove(index);
     }
 
-    public void eliminarTipoConcreto (MediaType tipo) {
-        int index = 0;
-        for (Media listado : arrayMedia) {
-            if (tipo.equals(listado.getTipo())) {
-                index = arrayMedia.indexOf(this);
+    public static void eliminarTipoConcreto (MediaType tipo) {
+        Iterator<Media> iterator = arrayMedia.iterator();
+
+        while (iterator.hasNext()) {
+            Media elemento = iterator.next();
+
+            if (elemento.tipo.equals(tipo)) {
+                iterator.remove();
             }
         }
-        arrayMedia.remove(index);
     }
 
-    public void parserXML(){
-        System.out.println("<media>");
-        for (Media listado : arrayMedia) {
-            System.out.println("<id>" + listado.getIdMedia() + "</id>");
-            System.err.println("<nombre>" + listado.getNombre() + "</nombre>");
-            System.out.println("<contenido>" + listado.getContenido() + "</contenido>");
-            System.out.println("<tipo>" + listado.getTipo() + "</tipo>");
-            System.out.println("<usuario_id>" + listado.getUsuario_id() + "</usuario_id>");
+    public static void eliminarTodosUsuariosID (int id) {
+        Iterator<Media> it = arrayMedia.iterator();
+
+        while (it.hasNext()) {
+            Media media = it.next();
+
+            if (media.usuario.getId() == id) {
+                it.remove();
+            }
         }
-        System.out.println("</media>");
     }
+
+    public String generateXML(){
+
+        String xml = "<media>\n";
+        xml += "<id>" + id + "</id>\n";
+        xml += "<nombre>" + nombre + "</nombre>\n";
+        xml += "<contenido>" + contenido + "</contenido>\n";
+        xml += "<tipo>" + tipo + "</tipo>\n";
+        xml += usuario.generateXML();
+        xml += "</media>\n";
+
+        return xml;
+    }
+    //     System.out.println("<media>");
+    //     for (Media listado : arrayMedia) {
+    //         System.out.println("<id>" + listado.getIdMedia() + "</id>");
+    //         System.err.println("<nombre>" + listado.getNombre() + "</nombre>");
+    //         System.out.println("<contenido>" + listado.getContenido() + "</contenido>");
+    //         System.out.println("<tipo>" + listado.getTipo() + "</tipo>");
+    //         System.out.println("<usuario_id>" + listado.getUsuario_id() + "</usuario_id>");
+    //     }
+    //     System.out.println("</media>");
+    // }
 
     //Asignar un campo Media cada vez que se crea un Usuario. 
     /*public void vincularIdUsuario(){
