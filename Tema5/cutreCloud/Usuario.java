@@ -101,4 +101,8 @@ public class Usuario implements ParserXML {
         // }
         //     System.out.println("</usuario>");
     }
+
+    public String writeXML() {
+        
+    }
 }
