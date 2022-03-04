@@ -10,7 +10,7 @@ import java.util.Iterator;
 public class Club
 {
     // Define any necessary fields here ...
-    ArrayList<Membership> arrayMiembros = new ArrayList<>();
+    public static ArrayList<Membership> arrayMiembros = new ArrayList<>();
     
     /**
      * Constructor for objects of class Club
@@ -46,23 +46,33 @@ public class Club
      * @return El número de miembros que se han unido ese mes
      */
     public int joinedInMonth(int month) {
+        int miembrosMes = 0;
         if ((month < 1) || (month > 12)) {
             System.out.println("El valor introducido supera lo esperado.");
             return 0;
         } else {
-            return month;
+            for (Membership listado : arrayMiembros) {
+                if (listado.getMonth() == month) {
+                    System.out.println(listado.getName());
+                    miembrosMes++;
+                }
+            }
+            return miembrosMes;
         }
     }
 
-    public void purge (int month) {
+    public int purge (int month) {
         Iterator<Membership> it = arrayMiembros.iterator();
+        int eliminados = 0;
 
         while (it.hasNext()) {
             Membership miembro = it.next();
 
             if (miembro.getMonth() == month) {
                 it.remove();
+                eliminados++;
             }
         }
+        return eliminados;
     }
 }
