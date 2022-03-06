@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ParserXMLTest",
+            "request": "launch",
+            "mainClass": "Tema5.cutreCloud.ParserXMLTest",
+            "projectName": "1DAWProgramacion_45c63a41"
+        },
+        {
+            "type": "java",
             "name": "Launch ClubDemo",
             "request": "launch",
             "mainClass": "ClubDemo",

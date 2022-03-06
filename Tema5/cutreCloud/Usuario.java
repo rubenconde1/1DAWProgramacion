@@ -1,7 +1,9 @@
 package Tema5.cutreCloud;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Usuario implements ParserXML {
     private int id;
@@ -102,7 +104,16 @@ public class Usuario implements ParserXML {
         //     System.out.println("</usuario>");
     }
 
-    public String writeXML() {
-        
+    public void writeXML() {
+        String textoImprimir = generateXML();
+        PrintWriter imprimir = null;
+
+        try {
+            imprimir = new PrintWriter("./datos.txt");
+        } catch (Exception e) {
+            System.out.println("No se ha podido crear el fichero: " + e.getMessage());
+        }
+        Objects.requireNonNull(imprimir).println(textoImprimir);
+        imprimir.close();
     }
 }

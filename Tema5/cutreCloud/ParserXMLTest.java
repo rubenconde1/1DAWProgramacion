@@ -1,5 +1,4 @@
 package Tema5.cutreCloud;
-
 public class ParserXMLTest {
 
     public static void printXML(ParserXML imprimible) {
@@ -11,5 +10,7 @@ public class ParserXMLTest {
 
         printXML(u1);
         printXML(m1);
+
+        u1.writeXML();
     }
 }
