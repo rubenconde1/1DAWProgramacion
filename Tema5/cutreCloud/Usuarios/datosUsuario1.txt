@@ -1,0 +1,6 @@
+<usuario>
+<id>2</id>
+<password>asasasas</password>
+<email>bb@gmail.com</email>
+</usuario>
+

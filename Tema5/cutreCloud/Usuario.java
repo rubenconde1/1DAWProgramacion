@@ -100,10 +100,10 @@ public class Usuario implements ParserXML {
 
         try {
             if (contador == 0) {
-                imprimir = new PrintWriter("datosUsuario.txt");
+                imprimir = new PrintWriter("Tema5/cutreCloud/Usuarios/datosUsuario.txt");
                 contador++;
             } else {
-            imprimir = new PrintWriter("datosUsuario"+ contador +".txt");
+            imprimir = new PrintWriter("Tema5/cutreCloud/Usuarios/datosUsuario"+ contador +".txt");
             contador++;
             }
         } catch (Exception e) {

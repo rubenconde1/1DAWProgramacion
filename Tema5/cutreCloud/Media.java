@@ -134,10 +134,10 @@ public class Media implements ParserXML {
 
         try {
             if (contador == 0) {
-                contenido = new PrintWriter("datosMedia.txt");
+                contenido = new PrintWriter("Tema5/cutreCloud/Media/datosMedia.txt");
                 contador++;
             } else {
-                contenido = new PrintWriter("datosMedia"+ contador +".txt");
+                contenido = new PrintWriter("Tema5/cutreCloud/Media/datosMedia"+ contador +".txt");
             contador++;
             }
         } catch (Exception e) {

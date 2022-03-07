@@ -1,0 +1,12 @@
+<media>
+<id>1</id>
+<nombre>peli.avi</nombre>
+<contenido>aaaa</contenido>
+<tipo>VIDEO</tipo>
+<usuario>
+<id>1</id>
+<password>blablabla</password>
+<email>kk@gmail.com</email>
+</usuario>
+</media>
+

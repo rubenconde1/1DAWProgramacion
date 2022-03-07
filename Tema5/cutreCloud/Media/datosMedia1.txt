@@ -1,0 +1,12 @@
+<media>
+<id>2</id>
+<nombre>audio.mp3</nombre>
+<contenido>bbbb</contenido>
+<tipo>AUDIO</tipo>
+<usuario>
+<id>2</id>
+<password>asasasas</password>
+<email>bb@gmail.com</email>
+</usuario>
+</media>
+
