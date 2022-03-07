@@ -1,7 +1,9 @@
 package Tema5.cutreCloud;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Media implements ParserXML {
     private int id;
@@ -11,19 +13,21 @@ public class Media implements ParserXML {
     private MediaType tipo;
     private Usuario usuario;
     public static ArrayList<Media> arrayMedia = new ArrayList<>();
+    private static int contador = 0;
 
     //Constructor
-    public Media(String nombre, String contenido, MediaType tipo, Usuario usuario_id) {
-        this.id = idGenerator++;
+    public Media(String nombre, String contenido, MediaType tipo, Usuario usuario) {
         if (this.nombreUnico(nombre)) {
+            this.id = idGenerator++;
             this.nombre = nombre;
             arrayMedia.add(this);
         } else {
+            this.id = -1;
             this.nombre = "Nombre duplicado: " + nombre;
         }
         this.contenido = contenido;
         this.tipo = tipo;
-        this.usuario = getUsuario_id();
+        this.usuario = usuario;
     }
     
 
@@ -122,16 +126,26 @@ public class Media implements ParserXML {
 
         return xml;
     }
-    //     System.out.println("<media>");
-    //     for (Media listado : arrayMedia) {
-    //         System.out.println("<id>" + listado.getIdMedia() + "</id>");
-    //         System.err.println("<nombre>" + listado.getNombre() + "</nombre>");
-    //         System.out.println("<contenido>" + listado.getContenido() + "</contenido>");
-    //         System.out.println("<tipo>" + listado.getTipo() + "</tipo>");
-    //         System.out.println("<usuario_id>" + listado.getUsuario_id() + "</usuario_id>");
-    //     }
-    //     System.out.println("</media>");
-    // }
+
+
+    public void writeXML() {
+        PrintWriter contenido = null;
+        String textoImprimir = generateXML();
+
+        try {
+            if (contador == 0) {
+                contenido = new PrintWriter("datosMedia.txt");
+                contador++;
+            } else {
+                contenido = new PrintWriter("datosMedia"+ contador +".txt");
+            contador++;
+            }
+        } catch (Exception e) {
+            System.out.println("No se ha podido crear el fichero: " + e.getMessage());
+        }
+        Objects.requireNonNull(contenido).println(textoImprimir);
+        contenido.close();
+    }
 
     //Asignar un campo Media cada vez que se crea un Usuario. 
     /*public void vincularIdUsuario(){

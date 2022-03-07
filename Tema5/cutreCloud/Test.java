@@ -12,20 +12,17 @@ public class Test {
         userMedia1 = new Media("audio.mp3", "aaaa", MediaType.AUDIO, user1);
         userMedia2 = new Media("video.mp4", "bbbb", MediaType.VIDEO, user2);
         userMedia3 = new Media("img.jpg", "cccc", MediaType.IMAGE, user3);
-        
-        user1.parserXML();
-        userMedia1.parserXML();
 
-        userMedia1.eliminarPorNombre("aaaa");
+        Media.eliminarPorNombre("aaaa");
         
 
-        userMedia2.eliminarTipoConcreto(MediaType.VIDEO);
+        Media.eliminarTipoConcreto(MediaType.VIDEO);
         
 
-        user4.eliminarUsuarioPorEmail("email4@email.com");
+        Usuario.eliminarUsuarioPorEmail("email4@email.com");
         
 
-        user3.eliminarUsuariosDominio("@gmail.com");
+        Usuario.eliminarUsuariosDominio("@gmail.com");
 
         
     }

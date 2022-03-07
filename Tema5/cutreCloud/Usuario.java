@@ -11,6 +11,7 @@ public class Usuario implements ParserXML {
     private String password;
     public static ArrayList<Usuario> arrayUsuarios = new ArrayList<>();
     private static int idGenerator = 1;
+    private static int contador = 0;
 
     //Constructor
     public Usuario(String email, String password) {
@@ -61,12 +62,10 @@ public class Usuario implements ParserXML {
         return esUnico;
     }
 
-    public void eliminarUsuarioPorEmail (String email) {
-        int index;
+    public static void eliminarUsuarioPorEmail (String email) {
         for (Usuario listado : arrayUsuarios) {
-            if (email.equals(listado.getEmail())) {
-                index = arrayUsuarios.indexOf(this);
-                arrayUsuarios.remove(index);
+            if (listado.email.equals(email)) {
+                arrayUsuarios.remove(listado);
                 break;
             }
         }
@@ -93,23 +92,20 @@ public class Usuario implements ParserXML {
         xml += "</usuario>\n";
 
         return xml;
-
-        // System.out.println("<usuario>");   
-        // for (Usuario listado : arrayUsuarios) {
-            
-        //     System.out.println("<id>" + listado.getId() + "</id>");
-        //     System.out.println("<email>" + listado.getEmail() + "</email>");
-        //     System.out.println("<password>" + listado.getPassword() + "</password");
-        // }
-        //     System.out.println("</usuario>");
     }
 
     public void writeXML() {
-        String textoImprimir = generateXML();
         PrintWriter imprimir = null;
+        String textoImprimir = generateXML();
 
         try {
-            imprimir = new PrintWriter("./datos.txt");
+            if (contador == 0) {
+                imprimir = new PrintWriter("datosUsuario.txt");
+                contador++;
+            } else {
+            imprimir = new PrintWriter("datosUsuario"+ contador +".txt");
+            contador++;
+            }
         } catch (Exception e) {
             System.out.println("No se ha podido crear el fichero: " + e.getMessage());
         }
