@@ -1,9 +1,18 @@
 package Tema5.cutreCloud;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class Usuario implements ParserXML {
     private int id;
@@ -111,5 +120,37 @@ public class Usuario implements ParserXML {
         }
         Objects.requireNonNull(imprimir).println(textoImprimir);
         imprimir.close();
+    }
+
+    //Crear método que recupere los datos del fichero XML.
+    public static void loadXML(){
+        File folder = new File("Tema5/cutreCloud/Usuarios");
+        arrayUsuarios.clear();
+
+        for (File xmlFile : folder.listFiles()) {
+            arrayUsuarios.add(getLoadSingleXML(xmlFile));
+        }
+    }
+
+    private static Usuario getLoadSingleXML(File xmlFile) {
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder;
+        Document doc;
+        Usuario newUser = null;
+
+        try {
+            dBuilder = dbFactory.newDocumentBuilder();
+            doc = dBuilder.parse(xmlFile);
+            String email = doc.getElementsByTagName("email").item(0).getTextContent();
+            String password = doc.getElementsByTagName("password").item(0).getTextContent();
+            newUser = new Usuario(email, password);
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) { 
+            e.printStackTrace();
+        }
+        return newUser;
     }
 }

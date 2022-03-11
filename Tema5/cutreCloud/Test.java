@@ -24,6 +24,6 @@ public class Test {
 
         Usuario.eliminarUsuariosDominio("@gmail.com");
 
-        
+        Usuario.loadXML();
     }
 } 
