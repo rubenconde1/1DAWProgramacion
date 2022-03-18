@@ -3,6 +3,11 @@ package Tema5.RPG.Character.Race;
 import Tema5.RPG.Character.Stat.Stat;
 
 public abstract class Race {
+    //Constructor
+    public Race() {
+
+    }
+
     //Devuelve el modificador de la profesión segun el stat.
     public abstract int modifier(Stat stat);
 

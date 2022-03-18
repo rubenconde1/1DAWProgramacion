@@ -3,6 +3,11 @@ package Tema5.RPG.Character.Job;
 import Tema5.RPG.Character.Stat.Stat;
 
 public abstract class Job {
+    //Constructor
+    public Job(){
+
+    }
+
     //Devuelve el modificador de la profesión según el stat
     public abstract int modifier (Stat stat);
 
@@ -18,5 +23,7 @@ public abstract class Job {
         return getClass().getName();
     }
 
-    
+    public void nombreRaza(){
+
+    }
 }
