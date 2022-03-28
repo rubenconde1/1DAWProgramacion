@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejemplo3",
+            "request": "launch",
+            "mainClass": "Tema6.Ejemplo3",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo2",
+            "request": "launch",
+            "mainClass": "Tema6.Ejemplo2",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo1",
+            "request": "launch",
+            "mainClass": "Tema6.Ejemplo1",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch Test",
             "request": "launch",
             "mainClass": "Tema5.Formas.Test",
