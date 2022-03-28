@@ -6,6 +6,7 @@ import Tema5.RPG.Character.Stat.Constitution;
 import Tema5.RPG.Character.Stat.Dexterity;
 import Tema5.RPG.Character.Stat.Intelligence;
 import Tema5.RPG.Character.Stat.Strength;
+import Tema5.RPG.Item.Food.IConsumable;
 
 public class Character implements IDamageable{
     private String name;
@@ -97,5 +98,9 @@ public class Character implements IDamageable{
     public void heals(double amount) {
         System.out.print(getName() + "healed " + amount + " life. Health: " + (Health() - amount) + "/" + maxHealth());
         
-    }   
+    }
+
+    public void consumes (IConsumable consumable) {
+        System.out.println(getName() + "consumed: " + consumable);
+    }
 }
