@@ -33,6 +33,7 @@ public class Fichero1 {
         System.out.println("Lista de ficheros y directorios del directorio: ");
         System.out.println("--------------------------------------------------\n");
 
+        //ListFiles??
         for (String e : f.list()) {
             ficheros.add(e);
             Collections.sort(ficheros);
