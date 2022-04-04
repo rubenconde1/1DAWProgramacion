@@ -44,7 +44,14 @@ public class Fichero1 {
     public static void getParent() throws IOException {
             File ficheroActual = new File(f.getCanonicalPath());
             f = ficheroActual.getParentFile();
-    } 
+    }
+
+    public static void accederArchivo(int numero) {
+        File[] contenidoDirectorio = f.listFiles();
+        if ((numero != -1) && (numero != 0)) {
+            System.out.println(contenidoDirectorio[numero-1]);
+        }
+    }
 
     public static void main(String[] args) throws IOException {
         int numero = 0;
@@ -58,37 +65,14 @@ public class Fichero1 {
                 case 0:
                     getParent();
                     break;
-
-                case (!= 0):
             
                 default:
                     break;
             }
+            accederArchivo(numero);
             
         } while (numero != -1);
         System.out.println("El programa se ha cerrado.");
         scanner.close(); 
     }
-
 }
-
-// while (numero != -1) {
-//     try {
-//         System.out.println("Selecciona un número para continuar:");
-
-//         numero = Integer.parseInt(scanner.nextLine());
-//         switch (numero) {
-//             case 0:
-//                 //Ir al directorio padre.
-//                 break;
-//             case -1:
-//                 System.out.println("Se ha cerrado el programa.");
-//                 break;
-        
-//             default:
-//                 break;
-//         }
-//     } catch (Exception e) {
-//         System.out.println("Se ha producido un error.");
-//     }
-// }
