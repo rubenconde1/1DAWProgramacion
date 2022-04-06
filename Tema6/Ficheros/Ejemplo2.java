@@ -1,4 +1,4 @@
-package Tema6;
+package Tema6.Ficheros;
 
 import java.io.BufferedReader;
 import java.io.File;
