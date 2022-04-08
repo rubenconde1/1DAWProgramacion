@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejemplo14",
+            "request": "launch",
+            "mainClass": "Tema6.GestionContenido.Ejemplo14",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo13",
+            "request": "launch",
+            "mainClass": "Tema6.GestionContenido.Ejemplo13",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo12",
+            "request": "launch",
+            "mainClass": "Tema6.GestionContenido.Ejemplo12",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo11",
+            "request": "launch",
+            "mainClass": "Tema6.GestionContenido.Ejemplo11",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo10",
+            "request": "launch",
+            "mainClass": "Tema6.GestionContenido.Ejemplo10",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo7",
+            "request": "launch",
+            "mainClass": "Tema6.GestionContenido.Ejemplo7",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch Ejemplo6",
             "request": "launch",
             "mainClass": "Tema6.GestionContenido.Ejemplo6",
