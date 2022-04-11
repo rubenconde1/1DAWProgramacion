@@ -47,10 +47,20 @@ public class Fichero1 {
     }
 
     public static void accederArchivo(int numero) {
-        File[] contenidoDirectorio = f.listFiles();
-        if ((numero != -1) && (numero != 0)) {
-            System.out.println(contenidoDirectorio[numero-1]);
+        // File[] contenidoDirectorio = f.listFiles();
+        // if ((numero != -1) && (numero != 0)) {
+        //     System.out.println(contenidoDirectorio[numero-1]);
+        // }
+        if (numero >= 1 && numero <= f.listFiles().length) {
+            File nextFile = f.listFiles()[numero - 1];
+
+            if (nextFile.isDirectory() && nextFile.canRead()) {
+                f = nextFile;
+            }
         }
+        // else if (f.getParent() != null && numero == 0) {
+        //     f = f.getParentFile();
+        // }
     }
 
     public static void main(String[] args) throws IOException {
