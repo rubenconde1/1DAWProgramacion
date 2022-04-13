@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LeerPrimos",
+            "request": "launch",
+            "mainClass": "Tema6.LeePrimos.LeerPrimos",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch EscribirPrimos",
+            "request": "launch",
+            "mainClass": "Tema6.EscribePrimos.EscribirPrimos",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch Fichero1",
             "request": "launch",
             "mainClass": "Tema6.Ficheros.Fichero1",
