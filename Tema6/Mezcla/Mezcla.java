@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import Tema6.Ficheros.Fichero1;
 
 public class Mezcla {
     public static void main(String[] args) throws IOException {

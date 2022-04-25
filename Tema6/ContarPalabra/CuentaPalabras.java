@@ -12,10 +12,10 @@ public class CuentaPalabras {
         File fichero = new File("./Tema6/ContarPalabra/palabras.txt");
         BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
         String cadena ="";
-        Scanner sc = new Scanner(System.in);
+        Scanner lector = new Scanner(System.in);
 
         System.out.println("Introduce un texto: ");
-        cadena = sc.nextLine();
+        cadena = lector.nextLine();
         
         bw.write(cadena);
         bw.close();
@@ -24,7 +24,7 @@ public class CuentaPalabras {
         String palabra = "";
 
         System.out.println("Introduce una palabra para contar: ");
-        palabra = sc.next();
+        palabra = lector.next();
         
 
         int contador = 0;
@@ -34,7 +34,7 @@ public class CuentaPalabras {
                 contador++;
             }    
         }
-        sc.close();
+        lector.close();
         System.out.println("La palabra " + palabra + " se repite " + contador + " veces.");
     }
 }
