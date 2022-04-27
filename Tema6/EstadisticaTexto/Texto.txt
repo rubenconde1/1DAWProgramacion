@@ -1,0 +1,4 @@
+Contar el número de caracteres es importante porque casi todos los cuadros de texto que dependen de la entrada del 
+usuario tienen cierto límite en el número de caracteres que se pueden insertar. Por ejemplo, el límite de caracteres 
+en una publicación de Facebook es de 63, 206 caracteres. Mientras que, para un tweet en Twitter, el límite de 
+caracteres es de 140 caracteres y el límite de caracteres es de 80 por publicación para Snapchat.

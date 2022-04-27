@@ -4,48 +4,43 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EstadisticaTexto {
-    int contadorPalabras;
-    int contadorLineas;
-    int contadorLetras;
-    double porcentajeVocales;
-    double porcentajeConsonantes;
-    double porcentajeEspacios;
-    double porcentajeTabuladores;
-    List linias = new ArrayList<>();
+    public static int contadorPalabras;
+    public static int contadorLineas;
+    public static int contadorLetras;
+    public static double porcentajeVocales;
+    public static double porcentajeConsonantes;
+    public static double porcentajeEspacios;
+    public static double porcentajeTabuladores;
     
     public static void main(String[] args) throws IOException{
         File fichero = new File("./Tema6/EstadisticaTexto/Texto.txt");
-        
+        System.out.println(encontrarPalabras(fichero));
     }
     
-    public double encontrarVocales(File fichero) throws IOException{
-        int contadorVocales = 0;
-        String linia = "";
-        char[] vocales = {'a','e','i','o','u','A','E','I','O','U'};
-        char[] vocalesLinea = linia.toCharArray();
-        BufferedReader reader = new BufferedReader(new FileReader(fichero));
-
+    public static int encontrarPalabras(File fichero) throws IOException{
         try {
-            if (reader != null) {
-                while ((linia = reader.readLine()) != null) {
-                    linias.add(linia);
-                }
+            BufferedReader reader = new BufferedReader(new FileReader(fichero));
+            String linia = reader.readLine();
+
+            while (linia != null) {
+                String[] palabras = linia.split(" ");
+                contadorPalabras += palabras.length;
+                linia = reader.readLine();
             }
+            reader.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < vocalesLinea.length; i++) {
-            for (int j = 0; j < vocales.length; j++) {
-                if (vocalesLinea[i] == vocales[j]) {
-                    contadorVocales++;
-                }
-            }
-        }
+        return contadorPalabras;
+    }
+
+    public static double encontrarVocales(File fichero) throws IOException{
+        double contadorVocales = 0;
+
 
         return contadorVocales;
     }
