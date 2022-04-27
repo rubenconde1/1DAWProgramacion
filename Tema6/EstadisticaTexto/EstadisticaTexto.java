@@ -20,6 +20,7 @@ public class EstadisticaTexto {
         System.out.println("Número de palabras: " + encontrarPalabras(fichero));
         System.out.println("Número de líneas: " + encontrarLineas(fichero));
         System.out.println("Número de carácteres: " + encontrarLetras(fichero));
+        System.out.println("Porcentaje de vocales: " + encontrarVocales(fichero));
     }
     
     public static int encontrarPalabras(File fichero) throws IOException{
@@ -71,9 +72,25 @@ public class EstadisticaTexto {
     }
 
     public static double encontrarVocales(File fichero) throws IOException{
-        double contadorVocales = 0;
-
-
-        return contadorVocales;
+        int contadorVocales = 0;
+        
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fichero));
+            String linea = reader.readLine();
+            
+            while (linea != null) {
+                for (int i = 0; i < linea.length(); i++) {
+                    if (i == 'a') {
+                        contadorVocales++;
+                    }
+                }
+                linea = reader.readLine();
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        porcentajeVocales = (contadorVocales / contadorLetras);
+        return  porcentajeVocales;
     }
 }
