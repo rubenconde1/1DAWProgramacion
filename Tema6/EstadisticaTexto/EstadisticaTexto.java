@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class EstadisticaTexto {
     public static int contadorPalabras;
@@ -16,11 +17,13 @@ public class EstadisticaTexto {
     
     public static void main(String[] args) throws IOException{
         File fichero = new File("./Tema6/EstadisticaTexto/Texto.txt");
+        System.out.println("");
         System.out.println(fichero.getName());
-        System.out.println("Número de palabras: " + encontrarPalabras(fichero));
-        System.out.println("Número de líneas: " + encontrarLineas(fichero));
-        System.out.println("Número de carácteres: " + encontrarLetras(fichero));
-        System.out.println("Porcentaje de vocales: " + encontrarVocales(fichero));
+        System.out.println("---------------------");
+        System.out.println("Número de palabras: " + encontrarPalabras(fichero) + ".");
+        System.out.println("Número de líneas: " + encontrarLineas(fichero) + ".");
+        System.out.println("Número de carácteres: " + encontrarLetras(fichero) + ".");
+        System.out.println("Porcentaje de vocales: " + encontrarVocales(fichero) + "%.");
     }
     
     public static int encontrarPalabras(File fichero) throws IOException{
@@ -71,8 +74,9 @@ public class EstadisticaTexto {
         return contadorLetras;
     }
 
-    public static double encontrarVocales(File fichero) throws IOException{
+    public static String encontrarVocales(File fichero) throws IOException{
         int contadorVocales = 0;
+        DecimalFormat df = new DecimalFormat("00.00");
         
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fichero));
@@ -80,17 +84,18 @@ public class EstadisticaTexto {
             
             while (linea != null) {
                 for (int i = 0; i < linea.length(); i++) {
-                    if (i == 'a') {
+                    if (i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u' || i == 'A' || i == 'E' || i == 'I' || i == 'O' || i == 'U') {
                         contadorVocales++;
                     }
                 }
                 linea = reader.readLine();
             }
             reader.close();
+            System.out.println(contadorVocales);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        porcentajeVocales = (contadorVocales / contadorLetras);
-        return  porcentajeVocales;
+        porcentajeVocales = (double)(contadorVocales * 100) / contadorLetras;
+        return  df.format(porcentajeVocales);
     }
 }
