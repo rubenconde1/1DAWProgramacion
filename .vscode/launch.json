@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Controles.Control04.Test",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch EstadisticaTexto",
             "request": "launch",
             "mainClass": "Tema6.EstadisticaTexto.EstadisticaTexto",

@@ -17,7 +17,7 @@ public class PersistenciaCliente {
         PrintWriter writer = new PrintWriter(fichero);
 
         for (Cliente clienteAEscribir : listadoClientes) {
-            writer.println(clienteAEscribir + ",");
+            writer.println(clienteAEscribir);
         }
         writer.close();
     }
@@ -29,6 +29,7 @@ public class PersistenciaCliente {
         while (lineaCliente != null) {
             listadoLeidoClientes.add(lineaCliente);
             lineaCliente = reader.readLine();
+            System.out.println();
         }
         reader.close();
         System.out.println(listadoLeidoClientes);
