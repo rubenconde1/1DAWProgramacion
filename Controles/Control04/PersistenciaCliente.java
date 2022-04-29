@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class PersistenciaCliente {
-    File fichero = new File("./Controles/Control04/clientes.data");
+    File fichero = new File("./Controles/Control04/clientes.dat");
     private static ArrayList<Cliente> listadoClientes = Cliente.getDatosCliente();
     private static ArrayList<String> listadoLeidoClientes = new ArrayList<String>();
     
