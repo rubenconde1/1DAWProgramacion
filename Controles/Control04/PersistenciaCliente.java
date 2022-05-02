@@ -13,13 +13,18 @@ public class PersistenciaCliente {
     private static ArrayList<String> listadoLeidoClientes = new ArrayList<String>();
     
     //Método de la clase write
-    public void writer(Cliente datosCliente) throws IOException{
-        PrintWriter writer = new PrintWriter(fichero);
+    public void writer(ArrayList<Cliente> datosCliente) throws IOException{
+        try {
+            PrintWriter writer = new PrintWriter(fichero);
 
         for (Cliente clienteAEscribir : listadoClientes) {
+            //La función println me imprime cada elemento en diferente línea.
             writer.println(clienteAEscribir);
         }
         writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void reader(File fichero) throws IOException {

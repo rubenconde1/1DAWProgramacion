@@ -36,7 +36,8 @@ public class Cliente extends Persona{
     //Métodos de la clase
     @Override
     public String toString() {
-        return "Datos Cliente \n" + "ID: \t\t" + id +"\n" + "NIF: \t\t" + nif + "\n" + "Nombre: \t" + nombre + "\n" + "Apellidos: \t" + apellidos + "\n" + "Email: \t\t" + email + ".";
+        return "Datos Cliente \n" + "ID: \t\t" + id +"\n" + "NIF: \t\t" + nif + "\n" +
+        "Nombre: \t" + nombre + "\n" + "Apellidos: \t" + apellidos + "\n" + "Email: \t\t" + email + ".";
     }
 
     
