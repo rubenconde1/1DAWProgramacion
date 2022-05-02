@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejemplo5",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.Ejemplo5",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo4",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.Ejemplo4",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo3",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.Ejemplo3",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo2",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.Ejemplo2",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo1",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.Ejemplo1",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch Test",
             "request": "launch",
             "mainClass": "Controles.Control04.Test",
