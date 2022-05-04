@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CrearObjetosEmpleado",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.CrearObjetosEmpleado",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch CrearEmpleadosXML",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.CrearEmpleadosXML",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch LeerXMLCoches",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.LeerXMLCoches",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch LeerXML2",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.LeerXML2",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch LeerXML",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.LeerXML",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo7",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.Ejemplo7",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo6",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.Ejemplo6",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch Ejemplo5",
             "request": "launch",
             "mainClass": "Tema6.FicherosConFormato.Ejemplo5",
