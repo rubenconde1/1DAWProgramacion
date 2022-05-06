@@ -37,6 +37,17 @@ public class CrearEmpleadosXML {
                 hijo.appendChild(doc.createTextNode(e.getNombre()));
                 emp.appendChild(hijo);
                 
+                hijo = doc.createElement("departamento");
+                hijo.appendChild(doc.createTextNode(String.valueOf(e.getDepartamento())));
+                emp.appendChild(hijo);
+
+                hijo = doc.createElement("edad");
+                hijo.appendChild(doc.createTextNode(String.valueOf(e.getEdad())));
+                emp.appendChild(hijo);
+
+                hijo = doc.createElement("sueldo");
+                hijo.appendChild(doc.createTextNode(String.valueOf(e.getSueldo())));
+                emp.appendChild(hijo);
 
                 root.appendChild(emp);
             }

@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EmpleadoToPrettyPrintingJSON",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.EmpleadoToPrettyPrintingJSON",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch EmpleadoToJSON",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.EmpleadoToJSON",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch JSONEnUnObjeto",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.JSONEnUnObjeto",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch JSONEnUnProperties",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.JSONEnUnProperties",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch CrearObjetosEmpleado",
             "request": "launch",
             "mainClass": "Tema6.FicherosConFormato.CrearObjetosEmpleado",
