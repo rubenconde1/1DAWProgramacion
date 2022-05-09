@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LeerGmaps",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.LeerGmaps",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch EscribirEnFicheroJSON",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.EscribirEnFicheroJSON",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch LeerObjetosEmpleado",
+            "request": "launch",
+            "mainClass": "Tema6.FicherosConFormato.LeerObjetosEmpleado",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch EmpleadoToPrettyPrintingJSON",
             "request": "launch",
             "mainClass": "Tema6.FicherosConFormato.EmpleadoToPrettyPrintingJSON",
