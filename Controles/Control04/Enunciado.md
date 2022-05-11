@@ -14,3 +14,9 @@ Sobreescribe el método toString para mostrar los atributos de un cliente de for
 Crea una clase PersistenciaCliente con un método write que recibe un ArrayList de clientes de tal forma que escribe en un fichero, llamado "clientes.dat", todos los clientes recibidos en el ArrayList.
 Cada cliente se escribe en una línea con los atributos separados por comas.
 Crear un método que se llama read, que recibe como parámetro el nombre del fichero a leer y devuelve un ArrayList con los clientes que ha conseguido leer.
+
+--------------------------------------------------------------
+
+Ejercicios fuera de exámen:
+
+Hacer los puntos utilizando XML y JSON

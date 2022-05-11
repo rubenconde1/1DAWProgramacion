@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Controles.Control04_XMLyJSON.Test",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch LeerGmaps",
             "request": "launch",
             "mainClass": "Tema6.FicherosConFormato.LeerGmaps",

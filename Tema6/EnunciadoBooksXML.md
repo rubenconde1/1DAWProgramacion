@@ -1,0 +1,1 @@
+Crear programa que con el fichero books.xml lea el archivo y obtener los diferentes géneros, sin repetirse.
