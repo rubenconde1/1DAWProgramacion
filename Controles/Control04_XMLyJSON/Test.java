@@ -3,8 +3,8 @@ package Controles.Control04_XMLyJSON;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Test {
-    public static void main(String[] args) throws IOException{
+public class Test{
+    public static void main(String[] args) throws IOException, ClassNotFoundException{
         ArrayList <Cliente> clientes = new ArrayList<>();
 
         Cliente cliente1 = new Cliente("10000000x", "Ramón", "Suarez", "1", "ramon@suarez.com");
@@ -20,7 +20,10 @@ public class Test {
         persistente.write(clientes);
         clientes = persistente.read();
 
-        persistente.writeXML(clientes);
-        persistente.leerOBJ();
+        // persistente.writeXML(clientes);
+        // persistente.leerOBJ();
+
+        persistente.crearObjetoCliente(clientes);
+        persistente.leerObjetoCliente();
     }
 }

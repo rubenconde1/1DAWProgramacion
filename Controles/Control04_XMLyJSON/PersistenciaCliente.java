@@ -11,22 +11,24 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PersistenciaCliente {
-    private static final String direccionFichero= "./Controles/Control04_XMLyJSON/clientes.dat";
+public class PersistenciaCliente implements Serializable {
+    private static final String direccionFichero = "./Controles/Control04_XMLyJSON/clientes.dat";
+    private static final String direccionFicheroSalida = "./Controles/Control04_XMLyJSON/clientes.obj";
 
-    public void write(ArrayList<Cliente> clientes){
+    public void write(ArrayList<Cliente> clientes) {
         try {
             FileWriter writer = new FileWriter(direccionFichero);
             BufferedWriter buffWriter = new BufferedWriter(writer);
 
             for (Cliente cliente : clientes) {
                 String linea = cliente.getId() + ", " +
-                cliente.getNif() + ", " +
-                cliente.getNombre() + ", " +
-                cliente.getApellidos() + ", " +
-                cliente.getEmail() + "\n";
+                        cliente.getNif() + ", " +
+                        cliente.getNombre() + ", " +
+                        cliente.getApellidos() + ", " +
+                        cliente.getEmail() + "\n";
 
                 buffWriter.write(linea);
             }
@@ -36,7 +38,7 @@ public class PersistenciaCliente {
         }
     }
 
-    public ArrayList<Cliente> read() throws IOException{
+    public ArrayList<Cliente> read() throws IOException {
         ArrayList<Cliente> listado = new ArrayList<Cliente>();
 
         FileReader reader = new FileReader(direccionFichero);
@@ -47,7 +49,7 @@ public class PersistenciaCliente {
 
             while ((linea = buffReader.readLine()) != null) {
                 String[] trozos = linea.split(",");
-                Cliente cliente = new Cliente(trozos[0], trozos[1], trozos[2], trozos[3], trozos[4]);
+                Cliente cliente = new Cliente(trozos[1], trozos[2], trozos[3], trozos[0], trozos[4]);
                 listado.add(cliente);
             }
         } catch (FileNotFoundException e) {
@@ -58,29 +60,37 @@ public class PersistenciaCliente {
         return listado;
     }
 
-    public void writeXML(ArrayList<Cliente> clientes) throws IOException{
-        String direccionObjeto = "./Controles/Control04_XMLyJSON/Cliente.obj";
-        ObjectOutputStream f = new ObjectOutputStream(new FileOutputStream(direccionObjeto));
-        
-        Cliente e;
-        for (Cliente listadoClientes : clientes) {
-            e = new Cliente(listadoClientes.getNif(), listadoClientes.getNombre(), listadoClientes.getApellidos(), listadoClientes.getId(), listadoClientes.getEmail());
+    //Crear fichero cliente.obj y leerlo
+    public void crearObjetoCliente(ArrayList<Cliente> clientes) throws IOException {
+        ObjectOutputStream f = new ObjectOutputStream(new FileOutputStream(direccionFicheroSalida));
+
+        for (Cliente copiaClientes : clientes) {
+            Cliente e = new Cliente(copiaClientes.getNif(), copiaClientes.getNombre(), copiaClientes.getApellidos(), copiaClientes.getId(), copiaClientes.getEmail());
+            f.writeObject(e);
         }
         f.close();
     }
 
-    //---------------------------------------------------------------
-    public void leerOBJ() throws IOException{
-        ObjectInputStream f = new ObjectInputStream(new FileInputStream("./Controles/Control04_XMLyJSON/Cliente.obj"));
+    public void leerObjetoCliente() throws FileNotFoundException, IOException, ClassNotFoundException{
+        ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(direccionFicheroSalida));
 
-        Cliente prueba;
         try {
-            while (true) {
-                prueba = (Cliente) f.readObject();
-                System.out.println("Nif: " + prueba.getNif() + "Nombre: " + prueba.getNombre() + "Apellidos: " + prueba.getApellidos() + "Email: " + prueba.getEmail());
-            }
-        } catch (EOFException) {
-            f.close();
+            Cliente e;
+           while (true) {
+               e = (Cliente) entrada.readObject();
+               System.out.println("ID: " + e.getId());
+               System.out.println("NIF: " + e.getNif());
+               System.out.println("Nombre: " + e.getNombre());
+               System.out.println("Apellidos: " + e.getApellidos());
+               System.out.println("Email: " + e.getEmail());
+               System.out.println();
+           } 
+        } catch (EOFException eof) {
+            entrada.close();
         }
+    }
+
+    public void escribirXML(ArrayList<Cliente> clientes) {
+
     }
 }
