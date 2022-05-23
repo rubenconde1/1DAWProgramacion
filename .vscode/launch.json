@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejecucion",
+            "request": "launch",
+            "mainClass": "Controles.Agenda.Ejecucion",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
+            "name": "Launch Conectar",
+            "request": "launch",
+            "mainClass": "Tema7.Conectar",
+            "projectName": "1DAWProgramacion_85b2f988"
+        },
+        {
+            "type": "java",
             "name": "Launch Test",
             "request": "launch",
             "mainClass": "Controles.Control04_XMLyJSON.Test",

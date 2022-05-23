@@ -2,6 +2,7 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "Tema5/MusicOrganizerV2/lib/jl1.0.1.jar",
-        "/home/INFORMATICA/alu10193045/Baixades/gson-2.9.0.jar"
+        "/home/INFORMATICA/alu10193045/Baixades/gson-2.9.0.jar",
+        "/home/INFORMATICA/alu10193045/Baixades/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29.jar"
     ]
 }
