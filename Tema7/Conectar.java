@@ -3,12 +3,12 @@ package Tema7;
 import java.sql.*;
 
 /**
- * TestDB
+ * Conectar con phpmyadmin
  */
 public class Conectar {
 
     public static void main(String[] args) {
-        String consulta = "SELECT count(*) as total FROM cliente";
+        String consulta = "SELECT * FROM cliente";
         String connectionUrl = "jdbc:mysql://192.168.204.129:3306/clientes";
 
         try {
@@ -23,8 +23,13 @@ public class Conectar {
                 ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                int total = rs.getInt("total");
-                System.out.println("Total: " + total);
+                String[] cliente = new String[5];
+                cliente[0] = rs.getString("id");
+                cliente[1] = rs.getString("nif");
+                cliente[2] = rs.getString("nombre");
+                cliente[3] = rs.getString("apellidos");
+                cliente[4] = rs.getString("email");
+                System.out.println("Cliente: " + cliente[0].toString() + "\t" + cliente[1].toString() + "\t" + cliente[2].toString() + "\t" + cliente[3].toString() + "\t" + cliente[4].toString());
             }
         } catch (SQLException e) {
             e.printStackTrace();
