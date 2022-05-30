@@ -2,43 +2,32 @@ package Tema7;
 
 import java.sql.*;
 
+/**
+ * TestDB
+ */
 public class Conectar {
 
-    public static void main(String[] av) {
+    public static void main(String[] args) {
+        String consulta = "SELECT count(*) as total FROM cliente";
+        String connectionUrl = "jdbc:mysql://192.168.204.129:3306/clientes";
 
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
 
-            // Dependiendo de a qué tipo de SGBD queramos conectar cargaremos un controlador
-            // u otro
+        try (Connection conn = DriverManager.getConnection(connectionUrl, "phpmyadmin", "phpmyadmin");
+                PreparedStatement ps = conn.prepareStatement(consulta);
+                ResultSet rs = ps.executeQuery()) {
 
-            // Intentar cargar el driver de MySQL
-
-            Class<?> c = Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Cargado " + c.getName());
-
-            // Definir la url de conexión y los parámetros de usuario y contraseña
-
-            String host = "jdbc:mysql://192.168.204.178/phpmyadmin";
-
-            String username = "phpmyadmin";
-
-            String password = "phpmyadmin";
-
-            Connection con = DriverManager.getConnection(host, username, password);
-
-            System.out.println("Conexión completada");
-
-            con.close();
-
-        } catch (ClassNotFoundException cnfe) {
-
-            System.out.println(cnfe.getMessage());
-
-        } catch (SQLException ex) {
-
-            System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
-
+            while (rs.next()) {
+                int total = rs.getInt("total");
+                System.out.println("Total: " + total);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
