@@ -1,6 +1,7 @@
 package Tema7;
 
 import java.sql.*;
+import java.util.Scanner;
 
 /**
  * Conectar con phpmyadmin
@@ -9,7 +10,8 @@ public class Conectar {
 
     public static void main(String[] args) {
         String consulta = "SELECT * FROM cliente";
-        String connectionUrl = "jdbc:mysql://192.168.204.129:3306/clientes";
+        String consulta2 = "INSERT INTO cliente (id, nif, nombre, apellidos, email) VALUES (?, ?, ?, ?, ?)";
+        String connectionUrl = "jdbc:mysql://192.168.204.168:3306/clientes";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -32,6 +34,61 @@ public class Conectar {
                 System.out.println("Cliente: " + cliente[0].toString() + "\t" + cliente[1].toString() + "\t" + cliente[2].toString() + "\t" + cliente[3].toString() + "\t" + cliente[4].toString());
             }
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        //Insertar valores en la tabla cliente
+        try (Connection conn = DriverManager.getConnection(connectionUrl, "phpmyadmin", "phpmyadmin");
+            PreparedStatement ps = conn.prepareStatement(consulta2)){
+
+            Scanner scanner = new Scanner(System.in);
+            int id;
+            String nif;
+            String nombre;
+            String apellidos;
+            String email;
+            int contador = 0;
+
+            if (contador == 0) {
+                while (true) {
+                    System.out.print("Inserta id:");
+                    id = scanner.nextInt();
+                    ps.setInt(1, id);
+    
+                    System.out.print("Inserta nif:");
+                    nif = scanner.next();
+                    ps.setString(2, nif);
+    
+                    System.out.print("Inserta nombre:");
+                    nombre = scanner.next();
+                    ps.setString(3, nombre);
+    
+                    System.out.print("Inserta apellidos:");
+                    apellidos = scanner.next().concat(" ").concat(scanner.next());
+                    ps.setString(4, apellidos);
+    
+                    System.out.print("Inserta email:");
+                    email = scanner.next();
+                    ps.setString(5, email);
+    
+                    ps.executeUpdate();
+                    contador++;
+                    System.out.println("Se ha creado " + contador + " clientes.");
+                }
+            } else {
+                System.out.println("¿Continuar?");
+                System.out.println("1 - Continuar.");
+                System.out.println("2 - Finalizar.");
+                int opcion = scanner.nextInt();
+
+                if (opcion == 1) {
+                    
+                } else {
+                    System.out.println("Finalizado. Se han insertado " + contador + " clientes.");
+                }
+            }
+            
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
