@@ -11,15 +11,31 @@ public class Conectar {
     public static void main(String[] args) {
         String consulta = "SELECT * FROM cliente";
         String consulta2 = "INSERT INTO cliente (id, nif, nombre, apellidos, email) VALUES (?, ?, ?, ?, ?)";
-        String connectionUrl = "jdbc:mysql://192.168.204.168:3306/clientes";
+        String consulta3 = "SELECT count(*) as total from cliente";
+        String consulta4 = "UPDATE cliente set nombre='Julian', apellidos='Update Prueba', email='julian@prueba.com' where id=?";
+        String connectionUrl = "jdbc:mysql://192.168.204.140:3306/clientes";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
 
+        //Devolver total de clientes creados
+        try (Connection conn = DriverManager.getConnection(connectionUrl, "phpmyadmin", "phpmyadmin");
+        PreparedStatement ps = conn.prepareStatement(consulta3);
+        ResultSet rs = ps.executeQuery()){
+
+            while (rs.next()) {
+                int total = rs.getInt("total");
+                System.out.println("Total: " + total);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //Devolver línea a línea el contenido
         try (Connection conn = DriverManager.getConnection(connectionUrl, "phpmyadmin", "phpmyadmin");
                 PreparedStatement ps = conn.prepareStatement(consulta);
                 ResultSet rs = ps.executeQuery()) {
@@ -48,9 +64,10 @@ public class Conectar {
             String apellidos;
             String email;
             int contador = 0;
+            int opcion = 1;
 
-            if (contador == 0) {
-                while (true) {
+            while (true) {
+                if (opcion == 1) {
                     System.out.print("Inserta id:");
                     id = scanner.nextInt();
                     ps.setInt(1, id);
@@ -74,19 +91,28 @@ public class Conectar {
                     ps.executeUpdate();
                     contador++;
                     System.out.println("Se ha creado " + contador + " clientes.");
-                }
-            } else {
-                System.out.println("¿Continuar?");
-                System.out.println("1 - Continuar.");
-                System.out.println("2 - Finalizar.");
-                int opcion = scanner.nextInt();
-
-                if (opcion == 1) {
-                    
+                    System.out.println("¿Continuar?");
+                    System.out.println("1 - Continuar.");
+                    System.out.println("2 - Finalizar.");
+                    opcion = scanner.nextInt();
                 } else {
-                    System.out.println("Finalizado. Se han insertado " + contador + " clientes.");
-                }
+                    if (opcion == 2) {
+                        System.out.println("Finalizado. Se han insertado " + contador + " clientes.");
+                        scanner.close();
+                        break;
+                        }
+                    }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //Update
+        try (Connection conn = DriverManager.getConnection(connectionUrl, "phpmyadmin", "phpmyadmin");
+        PreparedStatement ps = conn.prepareStatement(consulta4)){
+
+            ps.setInt(1, 8);
+            ps.executeUpdate();
             
         } catch (Exception e) {
             e.printStackTrace();
