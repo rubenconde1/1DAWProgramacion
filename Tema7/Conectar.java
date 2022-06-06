@@ -12,7 +12,7 @@ public class Conectar {
         String consulta = "SELECT * FROM cliente";
         String consulta2 = "INSERT INTO cliente (id, nif, nombre, apellidos, email) VALUES (?, ?, ?, ?, ?)";
         String consulta3 = "SELECT count(*) as total from cliente";
-        String consulta4 = "UPDATE cliente set nombre='Julian', apellidos='Update Prueba', email='julian@prueba.com' where id=?";
+        String consulta4 = "UPDATE cliente set nombre='Josep', apellidos='Pedrerol Hurtado', email='josep@pedrerol.com' where id=?";
         String connectionUrl = "jdbc:mysql://192.168.204.140:3306/clientes";
 
         try {
@@ -111,8 +111,9 @@ public class Conectar {
         try (Connection conn = DriverManager.getConnection(connectionUrl, "phpmyadmin", "phpmyadmin");
         PreparedStatement ps = conn.prepareStatement(consulta4)){
 
-            ps.setInt(1, 8);
+            ps.setInt(1, 15);
             ps.executeUpdate();
+            System.out.println("Consulta UPDATE realizada.");
             
         } catch (Exception e) {
             e.printStackTrace();
