@@ -23,17 +23,20 @@ public class Mezcla {
         BufferedReader br = new BufferedReader(new FileReader(fichero1));
         BufferedReader br2 = new BufferedReader(new FileReader(fichero2));
 
-        BufferedWriter bw = new BufferedWriter(new FileWriter(destino));
+        // BufferedWriter bw = new BufferedWriter(new FileWriter(destino));
 
-        copiar(bw, br);
-        copiar(bw, br2);
+        // copiar(bw, br);
+        // copiar(bw, br2);
+
+        System.out.println(br.readLine());
+        System.out.println(br2.readLine());
     }
 
-    private static void copiar (BufferedWriter bw, BufferedReader br) throws IOException {
-        String linea = br.readLine();
-        while (linea != null) {
-            bw.write(linea);
-             linea = br.readLine();
-        }
-    }
+    // private static void copiar (BufferedWriter bw, BufferedReader br) throws IOException {
+    //     String linea = br.readLine();
+    //     while (linea != null) {
+    //         bw.write(linea);
+    //          linea = br.readLine();
+    //     }
+    // }
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Mezcla",
+            "request": "launch",
+            "mainClass": "Tema6.Mezcla.Mezcla",
+            "projectName": "1DAWProgramacion_45c63a41"
+        },
+        {
+            "type": "java",
             "name": "Launch Ejecucion",
             "request": "launch",
             "mainClass": "Controles.Agenda.Ejecucion",
